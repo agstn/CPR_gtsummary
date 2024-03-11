@@ -1,0 +1,396 @@
+---
+title: "CDISC Pilot replication w/ gtsummary"
+subtitle: "CDISCPILOT01 - Initial Case Study of the CDISC SDTM/ADaM Pilot Project"
+author: "Agustin Calatroni"
+date: today
+date-format: long
+categories: [CSR, Tables, Figures]
+
+theme:
+   light: flatly
+   dark:  darkly
+
+execute: 
+   warning: false
+   eval: true
+   output: true
+   
+format:
+   html:
+      title-block-banner: "#f0f3f5"
+      title-block-banner-color: "black"
+      toc: true
+      toc-location: left
+      self-contained: true
+      code-fold: true
+      code-overflow: scroll
+      code-line-numbers: true
+      highlight-style: github
+---
+
+# CDISCPILOT01
+
+## Brief Description of Case Study
+This study was a prospective, randomized, multi-center, double-blind, placebo-controlled, parallel-group study. The objectives of the study were to evaluate the efficacy and safety of transdermal xanomeline, 50 cm^2^ and 75 cm^2^ , and placebo in subjects with mild to moderate Alzheimer’s disease.
+
+<br>
+
+{{< fa book >}} [CDISC Pilot Replication](https://github.com/atorus-research/CDISC_pilot_replication)
+
+{{< fa link >}} [Submissions Pilot to FDA](https://github.com/RConsortium/submissions-pilot1-to-fda)
+
+
+# Report
+
+{{< pdf doc-csr/cdiscpilot01-CSR.pdf width=100% height=600 >}}
+
+# Tables
+
+## Tables 14-1
+
+### Table 14-1.01
+```{r CPR-gtsummary-1}
+#| file: tables/t-14-1-01.R
+#| attr-source: "style='font-size: 10pt'"
+```
+
+### Table 14-1.02
+```{r CPR-gtsummary-2}
+#| file: tables/t-14-1-02.R
+#| attr-source: "style='font-size: 10pt'"
+```
+
+### Table 14-1.03
+```{r CPR-gtsummary-3}
+#| file: tables/t-14-1-03.R
+#| attr-source: "style='font-size: 10pt'"
+```
+
+## Tables 14-2
+
+### Table 14-2.01
+```{r CPR-gtsummary-4}
+#| file: tables/t-14-2-01.R
+#| attr-source: "style='font-size: 10pt'"
+```
+
+## Tables 14-3
+
+### Table 14-3.01
+```{r CPR-gtsummary-5}
+#| file: tables/t-14-3-01.R
+#| attr-source: "style='font-size: 10pt'"
+```
+
+:::{.column-margin}
+
+:::{.callout-warning}
+I updated the table layout because `gtsummary` does not accommodate stacking rows with different formats well.
+:::
+
+:::{.callout-caution}
+Here, we need to apply `gt::fmt_markdown` to format the line breaks within the table.
+:::
+
+:::
+
+### Table 14-3.02
+```{r CPR-gtsummary-6}
+#| file: tables/t-14-3-02.R
+#| attr-source: "style='font-size: 10pt'"
+```
+
+### Table 14-3.03
+```{r CPR-gtsummary-7}
+#| file: tables/t-14-3-03.R
+#| attr-source: "style='font-size: 10pt'"
+```
+
+### Table 14-3.04
+```{r CPR-gtsummary-8}
+#| file: tables/t-14-3-04.R
+#| attr-source: "style='font-size: 10pt'"
+```
+
+### Table 14-3.05
+```{r CPR-gtsummary-9}
+#| file: tables/t-14-3-05.R
+#| attr-source: "style='font-size: 10pt'"
+```
+
+### Table 14-3.06
+```{r CPR-gtsummary-10}
+#| file: tables/t-14-3-06.R
+#| attr-source: "style='font-size: 10pt'"
+```
+
+### Table 14-3.07
+```{r CPR-gtsummary-11}
+#| file: tables/t-14-3-07.R
+#| attr-source: "style='font-size: 10pt'"
+```
+
+### Table 14-3.08
+```{r CPR-gtsummary-12}
+#| file: tables/t-14-3-08.R
+#| attr-source: "style='font-size: 10pt'"
+```
+
+### Table 14-3.09
+```{r CPR-gtsummary-13}
+#| file: tables/t-14-3-09.R
+#| attr-source: "style='font-size: 10pt'"
+```
+
+### Table 14-3.10
+```{r CPR-gtsummary-14}
+#| cache: true
+#| file: tables/t-14-3-10.R
+#| attr-source: "style='font-size: 10pt'"
+```
+
+### Table 14-3.11
+
+::: {.panel-tabset}
+
+### Original
+```{r CPR-gtsummary-15}
+#| file: tables/t-14-3-11.R
+#| attr-source: "style='font-size: 10pt'"
+```
+
+### By Week
+```{r CPR-gtsummary-16}
+#| file: tables/t-14-3-11b.R
+#| attr-source: "style='font-size: 10pt'"
+```
+
+:::
+:::{.column-margin}
+
+:::{.callout-warning}
+I successfully reproduced the results, unlike the attempt by atorus-research, by using the newer `mmrm` package.
+:::
+
+:::{.callout-tip}
+The title of the table suggests a '... change from baseline to week 24'; however, as [slophaven](https://github.com/atorus-research/CDISC_pilot_replication/issues/6) pointed out, the numbers presented do not correspond to changes up to week 24 but rather represent the average changes observed at weeks 8, 16, and 24. This discrepancy suggests that the intended focus of this analysis was on the interaction, which we have accordingly replicated here.
+:::
+
+:::
+
+### Table 14-3.12
+```{r CPR-gtsummary-17}
+#| file: tables/t-14-3-12.R
+#| attr-source: "style='font-size: 10pt'"
+```
+
+:::{.column-margin}
+:::{.callout-warning}
+Table 14-3.12. Difference in values of Mean of Weeks 4-24. This was programmed using the derived NPTOTMN variable. The ARM in the original CDISC Pilot Define.xml was followed as best as possible to determine the subset. This means that the counts are a discrepancy with the original CDISC Pilot analysis data, which is no longer available, therefore we were not able to investigate the discrepancy with the current PHUSE CDISC Pilot replication data. The subsequent statistical summaries therefore also have differences.
+:::
+:::
+
+### Table 14-3.13
+```{r CPR-gtsummary-18}
+#| file: tables/t-14-3-13.R
+#| attr-source: "style='font-size: 10pt'"
+```
+
+:::{.column-margin}
+:::{.callout-important}
+I was unable to reproduce the Cochran-Mantel-Haenszel Chi-Squared Test for this table. However, by using the original data from atorus-research, I could replicate my findings, leading me to believe that there may be an error in the original table.
+:::
+:::
+
+## Table 14-4
+
+### Table 14-4-01
+```{r CPR-gtsummary-19}
+#| file: tables/t-14-4-01.R
+#| attr-source: "style='font-size: 10pt'"
+```
+
+## Table 14-5
+
+### Table 14-5-01
+```{r CPR-gtsummary-20}
+#| cache: true
+#| column: page
+#| file: tables/t-14-5-01.R
+#| attr-source: "style='font-size: 10pt'"
+```
+
+:::{.column-margin}
+:::{.callout-caution}
+The order within each AEBODSYS (Body System or Organ Class) is currently alphabetical, but we can apply different sorting methods if desired.
+:::
+:::
+
+### Table 14-5-02
+```{r CPR-gtsummary-21}
+#| cache: true
+#| column: page
+#| file: tables/t-14-5-02.R
+#| attr-source: "style='font-size: 10pt'"
+```
+
+## Table 14-6
+
+### Table 14-6-01
+```{r CPR-gtsummary-22}
+#| cache: true
+#| results: asis
+#| column: page
+#| file: tables/t-14-6-01.R
+#| attr-source: "style='font-size: 10pt'"
+```
+
+:::{.column-margin}
+:::{.callout-caution}
+The order of items within Chemistry and Hematology is currently alphabetical, based on laboratory names. However, we can adopt alternative sorting methods if preferred
+:::
+:::
+
+### Table 14-6-02
+```{r CPR-gtsummary-23}
+#| cache: true
+#| column: page
+#| file: tables/t-14-6-02.R
+#| attr-source: "style='font-size: 10pt'"
+```
+
+### Table 14-6-03
+```{r CPR-gtsummary-24}
+#| cache: true
+#| column: page
+#| file: tables/t-14-6-03.R
+#| attr-source: "style='font-size: 10pt'"
+```
+
+### Table 14-6-04
+```{r CPR-gtsummary-25}
+#| cache: true
+#| results: asis
+#| file: tables/t-14-6-04.R
+#| attr-source: "style='font-size: 10pt'"
+```
+
+:::{.column-margin}
+:::{.callout-caution}
+For the upcoming tables, we will only display 2 chemistry and 2 hematology variables to highlight the code without making the table excessively long.
+:::
+:::
+
+### Table 14-6-05
+```{r CPR-gtsummary-26}
+#| cache: true
+#| results: asis
+#| file: tables/t-14-6-05.R
+#| attr-source: "style='font-size: 10pt'"
+```
+
+### Table 14-6-06
+```{r CPR-gtsummary-27}
+#| file: tables/t-14-6-06.R
+#| attr-source: "style='font-size: 10pt'"
+#| timeit: true
+```
+
+## Table 14-7
+
+### Table 14-7-01
+```{r CPR-gtsummary-28}
+#| cache: true
+#| column: page
+#| file: tables/t-14-7-01.R
+#| attr-source: "style='font-size: 10pt'"
+```
+
+:::{.column-margin}
+:::{.callout-warning}
+Table 14-7-01. Difference in values for End of Treatment for all groups. The End of Treatment flag is used as is from the ADaM which indicates there are likely discrepancies for end of treatment between the original CDISC Pilot analysis data and the PHUSE CDISC Pilot replication data.
+:::
+:::
+
+### Table 14-7-02
+```{r CPR-gtsummary-29}
+#| cache: true
+#| column: page
+#| file: tables/t-14-7-02.R
+#| attr-source: "style='font-size: 10pt'"
+```
+
+:::{.column-margin}
+:::{.callout-warning}
+Table 14-7-02. Difference in values throughout table. The End of Treatment flag is used as is from the ADaM which indicates there are likely discrepancies for end of treatment between the original CDISC Pilot analysis data and the PHUSE CDISC Pilot replication data.
+:::
+:::
+
+### Table 14-7-03
+```{r CPR-gtsummary-30}
+#| file: tables/t-14-7-03.R
+#| attr-source: "style='font-size: 10pt'"
+```
+
+:::{.column-margin}
+:::{.callout-warning}
+Table 14-7-03. Difference in values for End of Treatment for all groups. The End of Treatment flag is used as is from the ADaM which indicates there are likely discrepancies for end of treatment between the original CDISC Pilot analysis data and the PHUSE CDISC Pilot replication data.
+:::
+:::
+
+### Table 14-7-04
+```{r CPR-gtsummary-31}
+#| file: tables/t-14-7-04.R
+#| attr-source: "style='font-size: 10pt'"
+```
+
+# Figures
+
+## Figure 14-1
+
+```{r CPR-gtsummary-32}
+#| fig.width: 8
+#| fig.height: 6
+#| file: figures/f-14-1.R
+#| attr-source: "style='font-size: 10pt'"
+```
+
+# PACKAGES
+
+:::{.callout-note icon=false appearance="simple" collapse="true" title="Package Links"}
+
+![](https://www.danieldsjoberg.com/gtsummary/reference/figures/logo.png){width=45px} 
+[gtsummary](https://www.danieldsjoberg.com/gtsummary/)
+
+![](https://shannonpileggi.github.io/gtreg/logo.png){width=45px}
+[gtreg](https://shannonpileggi.github.io/gtreg/)
+
+![](https://ih1.redbubble.net/image.1287293563.6253/st,small,507x507-pad,600x600,f8f8f8.u1.jpg){width=45px} 
+[bstfun](https://mskcc-epi-bio.github.io/bstfun/)
+
+![](https://www.tidyverse.org/images/hex-tidyverse.png){width=45px}
+[tidyverse](https://www.tidyverse.org/)
+
+![](https://haven.tidyverse.org/logo.png){width=45px}
+[haven](https://haven.tidyverse.org/)
+
+![](https://www.danieldsjoberg.com/ggsurvfit/logo.png){width=45px}
+[ggsurvfit](https://www.danieldsjoberg.com/ggsurvfit/)
+
+![](https://openpharma.github.io/mmrm/latest-tag/logo.svg){width=45px}
+[mmrm](https://openpharma.github.io/mmrm/latest-tag/index.html)
+
+![](https://larmarange.github.io/broom.helpers/reference/figures/broom.helpers.png){width=45px}
+[broom.helpers](https://larmarange.github.io/broom.helpers/)
+
+:::
+
+# SESSION INFO
+
+```{r session-info}
+#| cold-fold: false
+#| attr-source: "style='font-size: 10pt'"
+#| attr-output: "style='font-size: 8pt'"
+sessionInfo()
+```
+
